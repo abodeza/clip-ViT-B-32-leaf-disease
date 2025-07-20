@@ -49,7 +49,7 @@ Guidelines for contributors:
 
 ## Author
 
-Your Name
+Abdullah Alzahrani
 - Email: [abdullah.alzahrani.p@gmail.com](mailto:abdullah.alzahrani.p@gmail.com)
 - GitHub: [@abodeza](https://github.com/abodeza)
 - LinkedIn: [Abdullah](https://linkedin.com/in/a-a-alzahrani)
