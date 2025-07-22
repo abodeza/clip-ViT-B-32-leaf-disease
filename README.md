@@ -1,10 +1,19 @@
 # Fine-tuning CLIP on Classifying Plant Diseases
-A jupyter notebook based project showcasing the fine-tuning process of CLIP on new image text pairs. 
+A jupyter notebook based project showcasing the fine-tuning process of CLIP on plant diseases image-disease name pairs.
+
+Under the hood, this is a sentence-transformers model finetuned from sentence-transformers/clip-ViT-B-32. It maps sentences & paragraphs to a None-dimensional dense vector space and can be used for semantic textual similarity, semantic search, paraphrase mining, text classification, clustering, and more.
 
 This is a supplementary part of the plant disease detection project found [here](https://abodeza.github.io/projects/gharsa).
----
 
 
+## Access Fine-Tuned Model
+To access the finetuned model directly, it can be found [here](https://huggingface.co/abodeza/clip-ViT-B-32-leaf-disease/blob/main/README.md) on Hugging Face.
+
+## Model Description
+- **Model Type:** Sentence Transformer
+- **Base model:** [sentence-transformers/clip-ViT-B-32](https://huggingface.co/sentence-transformers/clip-ViT-B-32) <!-- at revision 11fb331c2c388748c110926aa8013161cb5a85b5 -->
+- **Maximum Sequence Length:** 77 tokens
+- **Similarity Function:** Cosine Similarity
 
 ## Getting Started
 
@@ -49,7 +58,7 @@ Guidelines for contributors:
 
 ## Author
 
-Your Name
+Abdullah Alzahrani
 - Email: [abdullah.alzahrani.p@gmail.com](mailto:abdullah.alzahrani.p@gmail.com)
 - GitHub: [@abodeza](https://github.com/abodeza)
 - LinkedIn: [Abdullah](https://linkedin.com/in/a-a-alzahrani)
