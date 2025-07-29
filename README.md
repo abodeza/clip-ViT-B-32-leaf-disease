@@ -7,7 +7,23 @@ This is a supplementary part of the plant disease detection project found [here]
 
 
 ## Access Fine-Tuned Model
-To access the finetuned model directly, it can be found [here](https://huggingface.co/abodeza/clip-ViT-B-32-leaf-disease/blob/main/README.md) on Hugging Face.
+To access the finetuned model, it can be found [here](https://huggingface.co/abodeza/clip-ViT-B-32-leaf-disease/blob/main/README.md) on Hugging Face.
+
+Or directly used as follows:
+```
+from sentence_transformers import SentenceTransformer
+import torch
+
+device       = "cuda" if torch.cuda.is_available() else "cpu"
+clip_model   = SentenceTransformer("abodeza/clip-ViT-B-32-leaf-disease", device=device)
+with torch.no_grad():
+    text_feats = clip_model.encode(text_prompts, convert_to_tensor=True, device=device)
+    text_feats = torch.nn.functional.normalize(text_feats, dim=-1)
+
+    feat       = clip_model.encode([img], convert_to_tensor=True, device=device)
+    feat       = torch.nn.functional.normalize(feat, dim=-1)
+    sims       = (feat @ text_feats.T).squeeze(0)
+```
 
 ## Model Description
 - **Model Type:** Sentence Transformer
