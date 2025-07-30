@@ -13,9 +13,14 @@ Or directly used as follows:
 ```
 from sentence_transformers import SentenceTransformer
 import torch
+from PIL import Image
+
+text_prompts = ["chlorosis", "burn", "rot"]
+img          = Image.open("leaf.jpg").convert("RGB")
 
 device       = "cuda" if torch.cuda.is_available() else "cpu"
 clip_model   = SentenceTransformer("abodeza/clip-ViT-B-32-leaf-disease", device=device)
+
 with torch.no_grad():
     text_feats = clip_model.encode(text_prompts, convert_to_tensor=True, device=device)
     text_feats = torch.nn.functional.normalize(text_feats, dim=-1)
